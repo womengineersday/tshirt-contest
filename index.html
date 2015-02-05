@@ -28,6 +28,9 @@
 
 <body>
 
+    <!-- Facebook SDK -->
+    <script src="assets/js/lib/facebook/facebooksdk.js"></script>
+
     <nav ng-include="'assets/partials/nav.html'"></nav>
 
     <div class="container">
@@ -37,25 +40,6 @@
       <footer ng-include="'assets/partials/footer.html'"></nav>
 
     </div>
-
-    <!-- Facebook SDK -->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '855878717790986',
-          xfbml      : true,
-          version    : 'v2.2'
-        });
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
 
     <!-- JS: Angular -->
     <script src="assets/js/lib/angular/angular.min.js"></script>
