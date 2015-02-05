@@ -6,7 +6,6 @@ function($scope, $location, $document, $http, Facebook, $routeParams) {
   $scope.gallery = {
     //imageList : Facebook.getImages();
     getImages : function() {
-      //alert("I'm here!");
       Facebook.getImages();
     }
   }
