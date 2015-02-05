@@ -28,6 +28,25 @@
 
 <body>
 
+    <!-- Facebook SDK -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1538354306430911',
+          xfbml      : true,
+          version    : 'v2.2'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <nav ng-include="'assets/partials/nav.html'"></nav>
 
     <div class="container">
@@ -54,6 +73,10 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/js/lib/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-549283531eb2f4fb" async="async"></script>
+
 
 </body>
 
