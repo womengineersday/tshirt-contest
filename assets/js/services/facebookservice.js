@@ -13,7 +13,7 @@ function($rootScope, $location, $http) {
             { access_token : pageAccessToken }, 
             function(resp) {
               console.log(resp);
-              images = resp.data;
+              //images = resp.data;
               tc.willis_images = resp.data;
             }
       );
