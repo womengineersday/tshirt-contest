@@ -1,6 +1,7 @@
 var tc = angular.module('tc',
   ['ngRoute',
-  'appControllers'
+  'appControllers',
+  'facebook'
   ]);
 
 var appControllers = angular.module('appControllers',[]);

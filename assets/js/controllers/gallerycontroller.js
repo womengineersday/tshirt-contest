@@ -1,8 +1,8 @@
-tc.controller('GalleryController',  ['$scope', '$location', '$document', '$http', 'Facebook', '$routeParams',
-function($scope, $location, $document, $http, Facebook, $routeParams) {
+tc.controller('GalleryController',  ['$scope', '$location', '$document', '$http', 'FacebookAPI', '$routeParams',
+function($scope, $location, $document, $http, FacebookAPI, $routeParams) {
 
   $scope.gallery = {
-    images : Facebook.getImages(),
+    images : FacebookAPI.getImages(),
 
     getImages : function() {
     	console.log($scope.gallery.images);
