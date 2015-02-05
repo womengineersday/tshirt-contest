@@ -14,6 +14,7 @@ function($rootScope, $location, $http) {
               function(resp) {
                 console.log(resp);
                 tc.willis_images = resp.data;
+                images = resp.data;
               }
         );
 
@@ -28,7 +29,7 @@ function($rootScope, $location, $http) {
 			"likes" : "50",
 			"shares" : "20"		//if you can get that
 		}
-		var images = [];
+		// var images = [];
 		for(var i = 0; i < 20; i++) images.push(image);
 
 		return images;
