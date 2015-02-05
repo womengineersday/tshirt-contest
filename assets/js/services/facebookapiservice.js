@@ -155,7 +155,7 @@ tc.config([
           }];
 
 
-          Facebook.api('/1538878606379836' function(response) {
+          Facebook.api('/1538878606379836', function(response) {
             console.log(response);
           });
 
