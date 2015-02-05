@@ -16,7 +16,8 @@ function($rootScope, $location, $http) {
             var uid = response.authResponse.userID;
             var accessToken = response.authResponse.accessToken;
 
-            console(response.authResponse);
+            console.log("RESPONSE")
+            console.log(response.authResponse);
 
           } else if (response.status === 'not_authorized') {
             // the user is logged in to Facebook, 
