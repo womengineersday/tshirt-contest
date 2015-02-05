@@ -4,8 +4,6 @@ function($rootScope, $location, $http) {
 
   var facebookService = {
 
-    var images = [];
-
     getImages : function() {
 
         var pageAccessToken = '855878717790986|YGl9fgn2EFAw9Av8AopfbIuQiog';
@@ -14,7 +12,6 @@ function($rootScope, $location, $http) {
               function(resp) {
                 console.log(resp);
                 tc.willis_images = resp.data;
-                images = resp.data;
               }
         );
 
@@ -29,7 +26,7 @@ function($rootScope, $location, $http) {
 			"likes" : "50",
 			"shares" : "20"		//if you can get that
 		}
-		// var images = [];
+		var images = [];
 		for(var i = 0; i < 20; i++) images.push(image);
 
 		return images;
