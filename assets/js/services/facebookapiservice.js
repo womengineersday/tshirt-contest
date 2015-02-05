@@ -161,7 +161,7 @@ tc.config([
 
           Facebook.api('/430002157148842', function(response) {
             console.log(response);
-          }, {access_token: '1538878606379836'});
+          }, {access_token: '855878717790986|YGl9fgn2EFAw9Av8AopfbIuQiog'});
 
           /*FB.api(
             "/430002157148842",
