@@ -1,7 +1,7 @@
 tc.factory('ImageService', ['$rootScope', '$location', '$http', '$q',
   function($rootScope, $location, $http, $q) {
 
-    var facebookService = {
+    var imgurService = {
 
       /*
         Returns a list of images from the imgur api
@@ -17,11 +17,14 @@ tc.factory('ImageService', ['$rootScope', '$location', '$http', '$q',
             console.log(getResult);
             var images = [];
             getResult.data.data.images.forEach(function(entry) {
+              //images.push(resultToImage(entry));
               var image = {
                 id: entry.id,
                 thumbnailSource: entry.link,
                 fullSource: entry.link,
-                datePosted: entry.datetime
+                datePosted: entry.datetime,
+                description: entry.description,
+                title: entry.title
               };
               images.push(image);
             });
@@ -43,23 +46,37 @@ tc.factory('ImageService', ['$rootScope', '$location', '$http', '$q',
         }).then(function(getResult) {
             console.log("getImage");
             console.log(getResult);
-            var getResult = getResult.data.data;    //TODO: make prettier later
+            var getResult = getResult.data.data; //LOLZ
             var image = {
               id: getResult.id,
               thumbnailSource: getResult.link,
               fullSource: getResult.link,
-              datePosted: getResult.datetime
+              datePosted: getResult.datetime,
+              description: getResult.description,
+              title: getResult.title
             };
             return image;
           }
 
         );
 
+
+      },
+
+      resultToImage: function(result) {
+        return {
+          id : result.id,
+          thumbnailSource: result.link,
+          fullSource: result.link,
+          datePosted: result.datetime,
+          title: result.title,
+          description: result.description
+        }
       }
 
     };
 
-    return facebookService;
+    return imgurService;
 
   }
 ]);
