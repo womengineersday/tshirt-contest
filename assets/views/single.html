@@ -1,12 +1,12 @@
 <div class="row" style="max-width: 900px; margin-left: auto; margin-right: auto;">
 
 	<div class="col-md-8 single-image-big">
-		<img class="img-responsive" src="http://placehold.it/500x500" alt="">
+		<img class="img-responsive" src="{{single.image.fullSource}}" alt="">
 	</div>
 	<div class="col-md-4 single-image-details">
-		<h3>Submitted: {{singleImage.dateSubmitted}}</h3>
-		<h3>Votes: {{singleImage.votes}}</h3>
-		<h3>Current Ranking: {{singleImage.ranking}}/{{singleImage.total}}</h3>
+		<h3>Submitted: {{single.image.datePosted}}</h3>
+		<h3>Votes: {{single.votes}}</h3>
+		<h3>Current Ranking: {{single.ranking}}/{{single.total}}</h3>
 	</div>
 
 </div>
