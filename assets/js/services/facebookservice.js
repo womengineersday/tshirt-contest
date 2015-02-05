@@ -6,30 +6,22 @@ function($rootScope, $location, $http) {
 
     getImages : function() {
 
-        var pageAccessToken = '855878717790986|YGl9fgn2EFAw9Av8AopfbIuQiog';
-      	FB.api('/430002157148842/photos', 
-              { access_token : pageAccessToken }, 
-              function(resp) {
-                console.log(resp);
-                tc.willis_images = resp.data;
-              }
-        );
+      var images = [];
 
-        // graph.facebook.com/oauth/access_token?client_id=855878717790986&client_secret=08c27b96aaf6265b3575b3294d9ccdaf&grant_type=client_credentials
+      var pageAccessToken = '855878717790986|YGl9fgn2EFAw9Av8AopfbIuQiog';
+    	FB.api('/430002157148842/photos', 
+            { access_token : pageAccessToken }, 
+            function(resp) {
+              console.log(resp);
+              images = resp.data;
+              tc.willis_images = resp.data;
+            }
+      );
 
-        // graph.facebook.com/endpoint?key=/444410022374722&access_token=855878717790986|08c27b96aaf6265b3575b3294d9ccdaf
+      // Get the access token
+      // GET https://graph.facebook.com/oauth/access_token?client_id=855878717790986&client_secret=08c27b96aaf6265b3575b3294d9ccdaf&grant_type=client_credentials
 
-		var image = {
-			"thumbnailSource" : "http://placehold.it/300x300",
-			"fullSource" : "http://placehold.it/500x500",
-			"datePosted" : Date.today().toString("yyyy-MM-dd"),
-			"likes" : "50",
-			"shares" : "20"		//if you can get that
-		}
-		var images = [];
-		for(var i = 0; i < 20; i++) images.push(image);
-
-		return images;
+  		return images;
 
     }
 
