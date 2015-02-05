@@ -1,46 +1,65 @@
-tc.config([
-    'FacebookProvider',
-    function(FacebookProvider) {
-      var myAppId = '1538878606379836';
-      FacebookProvider.init(myAppId);
-    }
-  ])
-  .factory('ImageService', ['$rootScope', '$location', '$http', '$q', 'Facebook',
-    function($rootScope, $location, $http, $q, Facebook) {
+tc.factory('ImageService', ['$rootScope', '$location', '$http', '$q',
+  function($rootScope, $location, $http, $q) {
 
-      var facebookService = {
+    var facebookService = {
 
-        getImages: function() {
-
-
-          return Facebook.api('/430002157148842/photos',
-              function(response) {}, {
-                access_token: '1538878606379836|ae28ecd25e2eb743ad1e564fcc04a506'
-              })
-            .then(function(response) {
-
-              var images = [];
-              response.data.forEach(function(entry) {
-                var image = {
-                  id: entry.id,
-                  thumbnailSource: entry.source,
-                  fullSource: entry.source,
-                  datePosted: entry.created_time,
-                  //likes: entry.likes.data.length,        //this causes an error if the image has not been liked
-                  link: entry.link,
-                  caption: entry.name
-                };
-                images.push(image);
-
-              });
-              return images;
-
+      /*
+        Returns a list of images from the imgur api
+      */
+      getImages: function() {
+        return $http.get('https://api.imgur.com/3/album/3HVhh', {
+          headers: {
+            Accept: 'application/json',
+            Authorization: 'Client-Id 7787cb4c8d72688'
+          }
+        }).then(function(getResult) {
+            console.log("getImages");
+            console.log(getResult);
+            var images = [];
+            getResult.data.data.images.forEach(function(entry) {
+              var image = {
+                id: entry.id,
+                thumbnailSource: entry.link,
+                fullSource: entry.link,
+                datePosted: entry.datetime
+              };
+              images.push(image);
             });
-        }
+            return images;
+          }
 
-      };
+        );
+      },
 
-      return facebookService;
+      /*
+        Returns a single image from the imgur api
+      */
+      getImage: function(imageId) {
+        return $http.get('https://api.imgur.com/3/image/' + imageId, {
+          headers: {
+            Accept: 'application/json',
+            Authorization: 'Client-Id 7787cb4c8d72688'
+          }
+        }).then(function(getResult) {
+            console.log("getImage");
+            console.log(getResult);
+            var getResult = getResult.data.data;    //TODO: make prettier later
+            var image = {
+              id: getResult.id,
+              thumbnailSource: getResult.link,
+              fullSource: getResult.link,
+              datePosted: getResult.datetime
+            };
+            return image;
+          }
 
-    }
-  ]);
+        );
+
+      }
+
+    };
+
+    return facebookService;
+
+  }
+]);

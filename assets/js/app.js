@@ -1,20 +1,19 @@
 var tc = angular.module('tc',
   ['ngRoute',
-  'appControllers',
-  'facebook'
+  'appControllers'
   ]);
 
 var appControllers = angular.module('appControllers',[]);
 
 tc.config(['$routeProvider', function($routeProvider){
   $routeProvider.
-  when('/single/:id', {
-    templateUrl: 'assets/views/single.html',
-    controller: 'GalleryController'
-  }).
   when('/home', {
     templateUrl: 'assets/views/home.html',
-    controller: 'GalleryController'
+    controller: 'HomeController'
+  }).
+  when('/single/:id', {
+    templateUrl: 'assets/views/single.html',
+    controller: 'SingleController'
   }).
   when('/detailsrules', {
     templateUrl: 'assets/views/detailsrules.html',
