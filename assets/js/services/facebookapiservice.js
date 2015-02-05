@@ -1,7 +1,7 @@
 tc.config([
     'FacebookProvider',
     function(FacebookProvider) {
-      var myAppId = '423840851054944';
+      var myAppId = '1538878606379836';
       FacebookProvider.init(myAppId);
     }
   ])
