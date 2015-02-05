@@ -1,6 +1,12 @@
-<h1>Single</h1>
+<div class="row" style="max-width: 900px; margin-left: auto; margin-right: auto;">
 
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<div class="addthis_sharing_toolbox"></div>
+	<div class="col-md-8 single-image-big">
+		<img class="img-responsive" src="http://placehold.it/500x500" alt="">
+	</div>
+	<div class="col-md-4 single-image-details">
+		<h3>Submitted: {{singleImage.dateSubmitted}}</h3>
+		<h3>Votes: {{singleImage.votes}}</h3>
+		<h3>Current Ranking: {{singleImage.ranking}}/{{singleImage.total}}</h3>
+	</div>
 
-<p ng-model="">{{imageId}}</p>
+</div>

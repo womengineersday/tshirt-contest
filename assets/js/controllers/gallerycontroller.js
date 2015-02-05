@@ -5,9 +5,19 @@ function($scope, $location, $document, $http, Facebook, $routeParams) {
 
   $scope.gallery = {
     //imageList : Facebook.getImages();
+    images : Facebook.getImages();
+
     getImages : function() {
       Facebook.getImages();
     }
+  }
+
+  $scope.singleImage = {
+  	imageId : $routeParams.imageId,
+  	dateSubmitted : Date.today().toString("yyyy-MM-dd"),
+  	votes : 50,
+  	ranking: 3,
+  	total: 25
   }
 
 

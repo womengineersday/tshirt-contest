@@ -15,6 +15,10 @@ tc.config(['$routeProvider', function($routeProvider){
     templateUrl: 'assets/views/home.html',
     controller: 'GalleryController'
   }).
+  when('/detailsrules', {
+    templateUrl: 'assets/views/detailsrules.html',
+    controller: 'StaticPageController'
+  }).
   otherwise({
     redirectTo: '/home'
   });
