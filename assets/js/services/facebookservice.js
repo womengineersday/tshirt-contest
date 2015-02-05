@@ -6,13 +6,11 @@ function($rootScope, $location, $http) {
 
     getImages : function() {
 
-/*      	FB.api('/1020500147046947/albums',  function(resp) {
+      	FB.api('/430002157148842/photos',  function(resp) {
             alert("I'm here...");
             console.log(resp);
-
-            
         });
-*/
+
 
 		var image = {
 			"thumbnailSource" : "http://placehold.it/300x300",
