@@ -1,38 +1,40 @@
-tc.controller('GalleryController',  ['$scope', '$location', '$document', '$http', 'FacebookAPI', '$routeParams',
-function($scope, $location, $document, $http, FacebookAPI, $routeParams) {
+tc.controller('GalleryController', ['$scope', '$location', '$document', '$http', 'FacebookAPI', '$routeParams',
+  function($scope, $location, $document, $http, FacebookAPI, $routeParams) {
 
-  $scope.gallery = {
-    images : FacebookAPI.getImages(),
+    $scope.gallery = {
+      // getImages: FacebookAPI.getImages(),
+      // images : $scope.gallery.getImages().$then(function() {
+      //   return $scope.gallery.getImages;
+      // }),
 
-    getImages : function() {
-    	console.log($scope.gallery.images);
-		Facebook.getImages();
-    },
-
-    printTest : function() {
-    	console.log($scope.gallery.images);
+      printTest: function() {
+        console.log("printTest called");
+        console.log($scope.gallery.images);
+        //console.log(FacebookAPI.getImages());
+      }
     }
+
+    $scope.single = {
+      routeId: $routeParams.id,
+      image: {
+        id: "444410022374722",
+        thumbnailSource: "http://placehold.it/300x300",
+        fullSource: "http://placehold.it/500x500",
+        datePosted: "2014-02-05",
+        likes: "50",
+        shares: "20"
+      },
+      votes: 100,
+      ranking: 20,
+      total: 50
+
+    }
+
+    FacebookAPI.getImages().then(function(result) {
+      $scope.gallery.images = result;
+      console.log("getImages call returned:");
+      console.log(result);
+    })
+
   }
-
-  $scope.single = {
-  	routeId : $routeParams.id,
-  	image : $scope.gallery.images[0],		//TODO: create getImage() function to pull image according to routeId
-  	votes: 100,
-  	ranking: 20,
-  	total: 50
-  	
-  }
-
-	/*$scope.getImage = function() {
-		$scope.gallery.images.forEach(function(entry) {
-			if(entry.id === routeId) return entry;
-		});
-		console.log("Error: image not found in list.");
-		return null;
-	};*/
-
-
-
-
-
-}]); //  GalleryController
+]); //  GalleryController
