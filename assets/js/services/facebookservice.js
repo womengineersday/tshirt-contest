@@ -29,10 +29,17 @@ function($rootScope, $location, $http) {
           }
         });
 
-      	FB.api('/430002157148842/photos',  function(resp) {
-            console.log(resp);
-        });
+        var pageAccessToken = '855878717790986|YGl9fgn2EFAw9Av8AopfbIuQiog';
+      	FB.api('/430002157148842/photos', 
+              { access_token : pageAccessToken }, 
+              function(resp) {
+                console.log(resp);
+              }
+        );
 
+        // graph.facebook.com/oauth/access_token?client_id=855878717790986&client_secret=08c27b96aaf6265b3575b3294d9ccdaf&grant_type=client_credentials
+
+        // graph.facebook.com/endpoint?key=/444410022374722&access_token=855878717790986|08c27b96aaf6265b3575b3294d9ccdaf
 
 		var image = {
 			"thumbnailSource" : "http://placehold.it/300x300",
