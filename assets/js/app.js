@@ -7,7 +7,7 @@ var appControllers = angular.module('appControllers',[]);
 
 tc.config(['$routeProvider', function($routeProvider){
   $routeProvider.
-  when('/single', {
+  when('/single/:imageId', {
     templateUrl: 'assets/views/single.html',
     controller: 'GalleryController'
   }).
