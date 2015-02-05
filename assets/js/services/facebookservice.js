@@ -14,7 +14,7 @@ function($rootScope, $location, $http) {
         });
 
 
-		var images = {
+		var image = {
 			"thumbnailSource" : "http://placehold.it/300x300",
 			"fullSource" : "http://placehold.it/500x500",
 			"datePosted" : Date.today().toString("yyyy-MM-dd"),
