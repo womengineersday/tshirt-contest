@@ -1,11 +1,11 @@
-tc.controller('GalleryController', ['$scope', '$location', '$document', '$http', 'FacebookAPI', '$routeParams',
-      function($scope, $location, $document, $http, FacebookAPI, $routeParams) {
+tc.controller('GalleryController', ['$scope', '$location', '$document', '$http', 'ImageService', '$routeParams',
+      function($scope, $location, $document, $http, ImageService, $routeParams) {
 
         $scope.gallery = {
           images: []
         }
 
-        FacebookAPI.getImages().then(function(result) {
+        ImageService.getImages().then(function(result) {
           //console.log(result);
           $scope.gallery.images = result;
         })
@@ -19,7 +19,7 @@ tc.controller('GalleryController', ['$scope', '$location', '$document', '$http',
         }
 
         $scope.$watch($routeParams.id, function(newVal, oldVal) {
-            FacebookAPI.getImages().then(function(result) {
+            ImageService.getImages().then(function(result) {
                 result.forEach(function(entry) {
                   if (entry.id == newVal) {
                     $scope.single.image = entry;
