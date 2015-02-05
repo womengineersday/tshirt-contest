@@ -154,6 +154,12 @@ tc.config([
             shares: "20"
           }];
 
+          Facebook.login(function(response) {
+            if (response.status == 'connected') {
+              $scope.logged = true;
+            }
+          });
+
           Facebook.api('/430002157148842', function(response) {
             console.log(response);
           });
