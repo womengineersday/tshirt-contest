@@ -4,36 +4,16 @@ function($rootScope, $location, $http) {
 
   var facebookService = {
 
+    var images = [];
+
     getImages : function() {
-
-        FB.getLoginStatus(function(response) {
-          if (response.status === 'connected') {
-            // the user is logged in and has authenticated your
-            // app, and response.authResponse supplies
-            // the user's ID, a valid access token, a signed
-            // request, and the time the access token 
-            // and signed request each expire
-            var uid = response.authResponse.userID;
-            var accessToken = response.authResponse.accessToken;
-
-            console.log("RESPONSE")
-            console.log(response.authResponse);
-
-          } else if (response.status === 'not_authorized') {
-            // the user is logged in to Facebook, 
-            // but has not authenticated your app
-            console.log("NOT AUTHORIZED");
-          } else {
-            // the user isn't logged in to Facebook.
-            console.log("NOT LOGGED IN");
-          }
-        });
 
         var pageAccessToken = '855878717790986|YGl9fgn2EFAw9Av8AopfbIuQiog';
       	FB.api('/430002157148842/photos', 
               { access_token : pageAccessToken }, 
               function(resp) {
                 console.log(resp);
+                tc.willis_images = resp.data;
               }
         );
 
