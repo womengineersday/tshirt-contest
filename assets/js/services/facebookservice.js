@@ -6,13 +6,13 @@ function($rootScope, $location, $http) {
 
     getImages : function() {
 
-      	FB.api('/1020500147046947/albums',  function(resp) {
+/*      	FB.api('/1020500147046947/albums',  function(resp) {
             alert("I'm here...");
             console.log(resp);
 
             
         });
-
+*/
 
 		var image = {
 			"thumbnailSource" : "http://placehold.it/300x300",
@@ -21,7 +21,7 @@ function($rootScope, $location, $http) {
 			"likes" : "50",
 			"shares" : "20"		//if you can get that
 		}
-		var images[];
+		var images = [];
 		for(var i = 0; i < 20; i++) images.push(image);
 
 		return images;

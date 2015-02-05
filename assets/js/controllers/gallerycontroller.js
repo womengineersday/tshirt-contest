@@ -4,11 +4,11 @@ function($scope, $location, $document, $http, Facebook, $routeParams) {
   $scope.imageId = $routeParams.imageId;
 
   $scope.gallery = {
-    //imageList : Facebook.getImages();
-    images : Facebook.getImages();
+    images : Facebook.getImages(),
 
     getImages : function() {
-      Facebook.getImages();
+    	console.log($scope.gallery.images);
+		Facebook.getImages();
     }
   }
 
