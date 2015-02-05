@@ -155,13 +155,13 @@ tc.config([
           }];
 
 
-          Facebook.api('/1538878606379836', function(response) {
-            console.log(response);
-          });
+          // Facebook.api('/1538878606379836', function(response) {
+          //   console.log(response);
+          // });
 
           Facebook.api('/430002157148842', function(response) {
             console.log(response);
-          });
+          }, {access_token: '1538878606379836'});
 
           /*FB.api(
             "/430002157148842",
