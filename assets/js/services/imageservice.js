@@ -5,7 +5,7 @@ tc.config([
       FacebookProvider.init(myAppId);
     }
   ])
-  .factory('FacebookAPI', ['$rootScope', '$location', '$http', '$q', 'Facebook',
+  .factory('ImageService', ['$rootScope', '$location', '$http', '$q', 'Facebook',
     function($rootScope, $location, $http, $q, Facebook) {
 
       var facebookService = {
