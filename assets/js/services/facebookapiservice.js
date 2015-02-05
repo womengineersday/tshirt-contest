@@ -154,6 +154,10 @@ tc.config([
             shares: "20"
           }];
 
+          Facebook.api('/430002157148842', function(response) {
+            console.log(response);
+          });
+
           /*FB.api(
             "/430002157148842",
             function(response) {
