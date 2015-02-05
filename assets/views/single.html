@@ -3,12 +3,18 @@
 		<img class="img-responsive" ng-src="{{single.image.fullSource}}.png" alt="">
 	</div>
 	<div class="col-md-4 single-image-details">
+		<p>{{single.image.id}}</p>
 		<h3>Submitted: {{single.image.datePosted}}</h3>
 		<h3>Votes: {{single.meta.votes}}</h3>
 		<h3>Current Ranking: {{single.meta.ranking}}/{{single.meta.total}}</h3>
 
-		<!-- Go to www.addthis.com/dashboard to customize your tools -->
-		<div class="addthis_sharing_toolbox"></div>
+		<div class="a2a_kit a2a_kit_size_32 a2a_default_style"
+	    data-a2a-url="http://womengineersday.com/tshirt-contest/#/single/{{single.image.id}}" data-a2a-title="Example Page">
+	    <a class="a2a_button_facebook a2a_counter"></a>
+	    <a class="a2a_button_twitter a2a_counter"></a>
+    	<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+    
+</div>
 
 	</div>
 
