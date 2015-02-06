@@ -1,6 +1,9 @@
 tc.controller('HomeController', ['$scope', '$location', 'ImgurService', '$routeParams',
   function($scope, $location, ImgurService, $routeParams) {
+
+    addthis.init();
     
+
     $scope.gallery = {
       images: []
     }

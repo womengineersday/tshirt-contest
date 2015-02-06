@@ -2,7 +2,7 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
   function($scope, $location, ImgurService, $routeParams) {
 
     //re-initialize sharethis buttons
-    addthis.init();
+    //addthis.init();
 
     $scope.single = {
       id: $routeParams.id,
@@ -19,6 +19,9 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
       console.log("Single controller");
       console.log($scope.image);
     })
+
+    // Once that's all done, call addthis.toolbox()
+    addthis.toolbox('.addthis_toolbox');
 
 
   }
