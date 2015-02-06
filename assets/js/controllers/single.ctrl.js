@@ -1,6 +1,8 @@
 tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$routeParams',
   function($scope, $location, ImgurService, $routeParams) {
 
+    $scope.baseURL = "http://womengineersday.com/tshirts";
+
     $scope.single = {
       id: $routeParams.id,
       image: {},
