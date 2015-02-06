@@ -1,7 +1,7 @@
 tc.controller('HomeController', ['$scope', '$location', 'ImgurService', '$routeParams',
   function($scope, $location, ImgurService, $routeParams) {
 
-    $scope.baseURL = "http://womengineersday.com/tshirts/#/";
+    $scope.baseURL = "http://womengineersday.com/tshirts";
 
     $scope.gallery = {
       images: []

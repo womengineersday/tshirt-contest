@@ -2,16 +2,17 @@
     <h2>WomEngineers Day 2015 T-Shirt Contest</h2>
     <div class="well well-lg" style="background-color: #B9E1E2">
         <p>
-            The design with the most likes and shares on social media will be featured on the WomEngineers Day 2015 T-Shirts!
+            <strong>The design with the most likes and shares on social media will be featured on the WomEngineers Day 2015 T-Shirts!</strong>
         </p>
         <p>
-            The winner will receive two Neyland Stadium box seat tickets for a 2015 football game as guests of Dr. Wayne Davis, Dean of UT's College of Engineering.
+            <strong>The winner will receive two Neyland Stadium box seat tickets for a 2015 football game as guests of Dr. Wayne Davis, Dean of UT's College of Engineering.</strong>
         </p>
-        <p><a href="#/detailsrules">View Details &amp; Rules Here</a></p>
+        <p><strong><a href="#/detailsrules">View Details &amp; Rules Here</a></strong></p>
     </div>
+    <p class="lead">Click the images below to view larger and vote!</p>
 </div>
 
-<h3>Click the images below to view larger and vote!</h3>
+
 
 <div class="row">
     <div class="col-lg-3 col-md-4 col-xs-6 thumb" ng-repeat="item in gallery.images | orderBy: item.datePosted" ng-init="smbInit()">
@@ -22,16 +23,16 @@
         <!--Social Media Buttons-->
             <!--Social Media Buttons-->
             <div class="smb-wrapper-tall">
-                <div class="fb-like" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                <div class="fb-like" data-href="{{baseURL}}/#/s/{{item.id}}" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
             </div>
             <div class="smb-wrapper-tall">
-                <div class="fb-share-button" data-layout="box_count"></div>
+                <div class="fb-share-button" data-href="{{baseURL}}/#/s/{{item.id}}" data-layout="box_count"></div>
             </div>
             <div class="smb-wrapper-tall">
-                <a class="twitter-share-button" data-text="Check out this submission for the WomEngineers Day T-Shirt Contest! Go vote now!" data-hashtags="WomEngineersDay" data-count="vertical">Tweet</a>
+                <a class="twitter-share-button" data-url="{{baseURL}}/#/s/{{item.id}}" data-text="Check out this submission for the WomEngineers Day T-Shirt Contest! Go vote now!" data-hashtags="WomEngineersDay" data-count="vertical">Tweet</a>
             </div>
             <div class="smb-wrapper-tall">
-                <div class="g-plusone" data-size="tall"></div>
+                <div class="g-plusone" href="{{baseURL}}/#/s/{{item.id}}" data-size="tall"></div>
             </div>
       </div>
     </div>
