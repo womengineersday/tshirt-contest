@@ -1,11 +1,14 @@
-var tc = angular.module('tc',
-  ['ngRoute',
-  'appControllers'
-  ]);
+var tc = angular.module('tc', ['ngRoute',
+    'appControllers'
 
-var appControllers = angular.module('appControllers',[]);
+  ])
+  .config(function($locationProvider) {
+    $locationProvider.html5Mode(true).hashPrefix('!');
+  });
 
-tc.config(['$routeProvider', function($routeProvider){
+var appControllers = angular.module('appControllers', []);
+
+tc.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
   when('/home', {
     templateUrl: 'assets/views/home.html',

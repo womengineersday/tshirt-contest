@@ -12,31 +12,18 @@
 
 <div class="row">
 	<div class="col-md-7 single-image-big">
-		<img class="img-responsive img-full" ng-src="{{single.image.fullSource}}" ng-init="smbInit()" alt="">
+		<img class="img-responsive img-full" ng-src="{{image.fullSource}}" ng-init="smbInit()" alt="">
 	</div>
 	<div class="col-md-5 single-image-details">
 		
 		<div class="panel panel-default">
 		  <div class="panel-heading">
-		  		<h3 class="panel-title">
-		  			Like, Share, Tweet, and +1 to vote!
-		  		</h3>
+		  		<h5 class="panel-title">
+		  			Like, Share, and Tweet to vote!
+		  		</h5>
 		  	</div>
 		  <div class="panel-body">
-		  	<!--Social Media Buttons-->
-		  	<div class="smb-wrapper-tall">
-		  		<div class="fb-like" data-href="{{getURL()}}" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
-		  	</div>
-		  	<div class="smb-wrapper-tall">
-		  		<div class="fb-share-button" data-href="{{baseURL}}/#/s/{{single.id}}" data-layout="box_count"></div>
-		  	</div>
-		  	<div class="smb-wrapper-tall">
-		  		<a class="twitter-share-button" data-url="{{getURL()}}" data-text="Check out this submission for the WomEngineers Day T-Shirt Contest! Go vote now!" data-hashtags="WomEngineersDay" data-count="vertical">Tweet</a>
-		  	</div>
-		  	<div class="smb-wrapper-tall">
-		  		<div class="g-plusone" data-url="{{baseURL}}/#/s/{{single.id}}" data-size="tall"></div>
-		  	</div>
-
+		  	
 		  </div>
 		</div>
 
@@ -47,12 +34,12 @@
 				</h3>
 			</div>
 			<div class="panel-body">
-				<p>Submitted: {{single.image.datePosted}}</p>
-				<p>{{single.image.description}}</p>
+				<p>Submitted: {{image.datePosted}}</p>
+				<p>{{image.description}}</p>
 			</div>
 		</div>
 
-		<h5><a href="#/s/{{single.image.prevId}}">&lArr; View Previous</a> | <a href="#/">View All</a> | <a href="#/s/{{single.image.nextId}}"> View Next &rArr; </a></h5>
+		<h5><a href="#/s/{{image.prevId}}">&lArr; View Previous</a> | <a href="#/">View All</a> | <a href="#/s/{{image.nextId}}"> View Next &rArr; </a></h5>
 
 
 	</div>
