@@ -1,14 +1,12 @@
 var tc = angular.module('tc', ['ngRoute',
-  'appControllers'
+  'appControllers',
+  'ngSocial'
 ]);
 
 var appControllers = angular.module('appControllers', []);
 
-tc.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-  $locationProvider.html5Mode({
-    enabled: true,
-    requireBase: false
-  });
+tc.config(function($routeProvider, $locationProvider) {
+  
   $routeProvider.
   when('/', {
     templateUrl: 'assets/views/home.html',
@@ -26,4 +24,7 @@ tc.config(['$routeProvider', '$locationProvider', function($routeProvider, $loca
     redirectTo: '/'
   });
 
-}]);
+  // use the HTML5 History API
+  //$locationProvider.html5Mode(true);
+
+});
