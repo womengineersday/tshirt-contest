@@ -18,6 +18,7 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
     });
 
     $scope.smbInit = function() {
+      $scope.$apply();
       try{
         console.log("reloading FB buttons");
         FB.XFBML.parse();
