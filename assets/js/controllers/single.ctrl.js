@@ -20,22 +20,27 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
       console.log($scope.image);
     });
 
-    //Reload all of the social media buttons on the page.
-    try{
+    $scope.smbInit = function() {
+      try{
         console.log("reloading FB buttons");
         FB.XFBML.parse();
-    }catch (ex) { }    
+      }catch (ex) { }    
 
-    try {
-      console.log("reloading Twitter button");
-      twttr.widgets.load();  
-    } catch(ex) { }
+      try {
+        console.log("reloading Twitter button");
+        twttr.widgets.load();  
+      } catch(ex) { }
 
-    try {
-      console.loog("reloading Google+ button");
-      gapi.plusone.go();
-    } catch(ex) { }
+      try {
+        console.log("reloading Google+ button");
+        gapi.plusone.go();
+      } catch(ex) { }
+    };
 
+    //Call any functions that depend on DOM elements being loaded.
+    $scope.$on('$viewContentLoaded', function(){
+      $scope.smbInit();
+    });
 
   }
 ]); //  SingleController
