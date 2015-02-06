@@ -1,14 +1,14 @@
 var tc = angular.module('tc', ['ngRoute',
-    'appControllers'
-
-  ])
-  .config(function($locationProvider) {
-    $locationProvider.html5Mode(true).hashPrefix('!');
-  });
+  'appControllers'
+]);
 
 var appControllers = angular.module('appControllers', []);
 
-tc.config(['$routeProvider', function($routeProvider) {
+tc.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
   $routeProvider.
   when('/', {
     templateUrl: 'assets/views/home.html',
@@ -25,4 +25,5 @@ tc.config(['$routeProvider', function($routeProvider) {
   otherwise({
     redirectTo: '/'
   });
+
 }]);
