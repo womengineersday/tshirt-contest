@@ -6,6 +6,12 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
 	$scope.socialURL = $location.absUrl();
     $scope.testURL = $location.absUrl();
     
+    $scope.social = {
+    	url : $location.absUrl(),
+    	title : 'Check out this submission for the #WomEngineersDay T-Shirt Contest',
+    	description : 'Check out this submission for the #WomEngineersDay T-Shirt Contest'
+    }
+
     $scope.image = {};
 
     ImgurService.getImage($routeParams.id).then(function(result) {
