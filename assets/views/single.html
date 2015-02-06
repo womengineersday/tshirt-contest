@@ -15,11 +15,7 @@
 		  		</h5>
 		  	</div>
 		  <div class="panel-body">
-		  	{{socialURL}}
-		  	{{testURL}}
-		  	{{current_title}}
-		  	{{current_description}}
-		  	 <ul ng-social-buttons
+		  	<!--  <ul ng-social-buttons
 		         data-url="social.url"
 		         data-title="social.title"
 		         data-description="social.description"
@@ -28,7 +24,16 @@
 	            <li class="ng-social-facebook">Facebook</li>
 	            <li class="ng-social-twitter">Twitter</li>
 	            <li class="ng-social-google-plus">Google+</li>
-	        </ul>
+	        </ul> -->
+	        <div class="col-xs-5">
+                <div fb-like="myModel.FbLikeUrl"></div>
+            </div>
+            <div class="col-xs-4">
+                <div tweet="myModel.Name"></div>
+            </div>
+            <div class="col-xs-3">
+                <div google-plus></div>
+            </div>
 		  </div>
 		</div>
 

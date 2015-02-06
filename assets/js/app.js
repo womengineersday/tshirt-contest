@@ -1,7 +1,12 @@
 var tc = angular.module('tc', ['ngRoute',
   'appControllers',
-  'ngSocial'
-]);
+  'ngSocial',
+  'angulike'
+]).run([
+      '$rootScope', function($rootScope) {
+          $rootScope.facebookAppId = '1538878606379836';
+      }
+  ]);
 
 var appControllers = angular.module('appControllers', []);
 
