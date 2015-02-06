@@ -2,7 +2,7 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
   function($scope, $location, ImgurService, $routeParams) {
  
     $scope.social = {
-    	url : encodeURIComponent($location.absUrl()),
+    	url : encodeURI($location.absUrl()),
     	title : 'Check out this submission for the #WomEngineersDay T-Shirt Contest',
     	description : 'Check out this submission for the #WomEngineersDay T-Shirt Contest'
     }
@@ -13,6 +13,8 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
       console.log("SingleController: calling ImgurService service to get image with ID: " + $routeParams.id);
       $scope.image = result;
     });
+
+    console.log($scope.social.url);
 
   }
 ]); //  SingleController
