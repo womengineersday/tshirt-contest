@@ -16,7 +16,7 @@
 		  	</div>
 		  <div class="panel-body">
 		  	<ul ng-social-buttons
-		         data-url="social.fburl"
+		         data-url="social.url2"
 		         data-title="social.title"
 		         data-description="social.description"
 		         data-image="'https://www.google.com.ua/images/srpr/logo4w.png'"
@@ -27,7 +27,8 @@
 	        </ul>
         	</div>
 	        <div class="col-xs-5">
-                <div fb-like="myModel.FbLikeUrl"></div>
+                <!-- <div fb-like="myModel.FbLikeUrl"></div> -->
+                <div fb-like="social.url2"></div>
             </div>
             <div class="col-xs-4">
                 <div tweet="myModel.Name"></div>
@@ -47,6 +48,7 @@
 				<p>Submitted: {{image.datePosted}}</p>
 				<p>{{image.description}}</p>
 				<p>URL: {{social.url}}</p>
+				<p>URL: {{social.url2}}</p>
 			</div>
 		</div>
 
