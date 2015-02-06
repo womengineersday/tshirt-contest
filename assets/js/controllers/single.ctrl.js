@@ -2,8 +2,9 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
   function($scope, $location, ImgurService, $routeParams) {
  
     $scope.social = {
-    	url : $location.absUrl(),
-    	url2 : window.location.href,
+    	url : 'http://goo.gl/BEQdZF',
+    	//url : $location.absUrl(),
+    	//url2 : window.location.href,
     	fburl : encodeURIComponent(encodeURIComponent($location.absUrl())),
 
     	title : 'Check out this submission for the #WomEngineersDay T-Shirt Contest',
