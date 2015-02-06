@@ -11,7 +11,7 @@ tc.config(['$routeProvider', function($routeProvider){
     templateUrl: 'assets/views/home.html',
     controller: 'HomeController'
   }).
-  when('/:id', {
+  when('/s/:id', {
     templateUrl: 'assets/views/single.html',
     controller: 'SingleController'
   }).

@@ -4,7 +4,7 @@
 
 <div class="row">
 	<div class="col-md-7 single-image-big">
-		<img class="img-responsive img-full" ng-src="{{single.image.fullSource}}.png" alt="">
+		<img class="img-responsive img-full" ng-src="{{single.image.fullSource}}.png" ng-init="smbInit()" alt="">
 	</div>
 	<div class="col-md-5 single-image-details">
 		
@@ -15,7 +15,7 @@
 		  		</h3>
 		  	</div>
 		  <div class="panel-body">
-
+		  	<!--Social Media Buttons-->
 		  	<div class="smb-wrapper-tall">
 		  		<div class="fb-like" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
 		  	</div>

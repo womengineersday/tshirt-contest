@@ -1,6 +1,8 @@
 tc.controller('HomeController', ['$scope', '$location', 'ImgurService', '$routeParams',
   function($scope, $location, ImgurService, $routeParams) {
 
+    $scope.baseURL = "http://womengineersday.com/tshirts/#/";
+
     $scope.gallery = {
       images: []
     }
@@ -9,27 +11,24 @@ tc.controller('HomeController', ['$scope', '$location', 'ImgurService', '$routeP
       $scope.gallery.images = result;
       console.log("Home controller");
       console.log($scope.gallery);
-
     });
 
-    //Reload all of the social media buttons on the page.
-    try{
+     $scope.smbInit = function() {
+      try{
         console.log("reloading FB buttons");
         FB.XFBML.parse();
-    }catch (ex) { }    
+      }catch (ex) { }    
 
-    try {
-      console.log("reloading Twitter button");
-      twttr.widgets.load();  
-    } catch(ex) { }
+      try {
+        console.log("reloading Twitter button");
+        twttr.widgets.load();  
+      } catch(ex) { }
 
-    try {
-      console.loog("reloading Google+ button");
-      gapi.plusone.go();
-    } catch(ex) { }
-
-
-
+      try {
+        console.log("reloading Google+ button");
+        gapi.plusone.go();
+      } catch(ex) { }
+    };
 
   }
 ]); //  HomeController

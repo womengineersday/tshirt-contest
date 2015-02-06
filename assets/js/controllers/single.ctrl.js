@@ -1,9 +1,6 @@
 tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$routeParams',
   function($scope, $location, ImgurService, $routeParams) {
 
-    //re-initialize sharethis buttons
-    //addthis.init();
-
     $scope.single = {
       id: $routeParams.id,
       image: {},
@@ -38,9 +35,9 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
     };
 
     //Call any functions that depend on DOM elements being loaded.
-    $scope.$on('$viewContentLoaded', function(){
+    /*$scope.$on('$viewContentLoaded', function(){
       $scope.smbInit();
-    });
+    });*/
 
   }
 ]); //  SingleController
