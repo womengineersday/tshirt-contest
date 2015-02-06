@@ -1,5 +1,5 @@
-tc.controller('HomeController', ['$scope', '$location', 'ImgurService', '$routeParams',
-  function($scope, $location, ImgurService, $routeParams) {
+tc.controller('HomeController', ['$scope', '$location', '$document', 'ImgurService', '$routeParams',
+  function($scope, $location, $document, ImgurService, $routeParams) {
 
     $scope.baseURL = "http://womengineersday.com/tshirts";
 
@@ -30,6 +30,16 @@ tc.controller('HomeController', ['$scope', '$location', 'ImgurService', '$routeP
         gapi.plusone.go();
       } catch(ex) { }
     };
+
+    $scope.setSMB = function(index, id) {
+      console.log(index, id);
+      var d = $document.find(id);
+      try {
+        FB.XFBML.parse(d);
+        FB.XFBML.parse(document.getElementById(id));
+      } catch(ex) { }
+      console.log(d);
+    }
 
   }
 ]); //  HomeController

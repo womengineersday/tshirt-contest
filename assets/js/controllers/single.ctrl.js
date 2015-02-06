@@ -20,7 +20,7 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
     });
 
     $scope.smbInit = function() {
-      $scope.$apply();
+      //$scope.$apply();
       try{
         console.log("reloading FB buttons");
         FB.XFBML.parse();
@@ -36,11 +36,6 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
         gapi.plusone.go();
       } catch(ex) { }
     };
-
-    //Call any functions that depend on DOM elements being loaded.
-    /*$scope.$on('$viewContentLoaded', function(){
-      $scope.smbInit();
-    });*/
 
   }
 ]); //  SingleController
