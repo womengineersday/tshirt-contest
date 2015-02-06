@@ -22,12 +22,20 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
 
 
     // Once that's all done, call addthis.toolbox()
-    addthis.toolbox();
-    addthis.toolbox('.addthis_toolbox');
-    addthis_share = {
-       url: "http://womengineersday.com/tshirts/#/single/" + $scope.single.id,
-       title: "THE TITLE"
-    }
+    // addthis.toolbox();
+    // addthis.toolbox('.addthis_toolbox');
+    // addthis_share = {
+    //    url: "http://womengineersday.com/tshirts/#/single/" + $scope.single.id,
+    //  title: "THE TITLE"
+    // }
+
+    //reloads the fb like button on view change
+
+    try{
+        FB.XFBML.parse(); 
+    }catch(ex){}    
+
+
 
   }
 ]); //  SingleController

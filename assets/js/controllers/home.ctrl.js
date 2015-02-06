@@ -12,7 +12,12 @@ tc.controller('HomeController', ['$scope', '$location', 'ImgurService', '$routeP
     })
 
     // Once that's all done, call addthis.toolbox()
-    addthis.toolbox('.addthis_toolbox');
+    //addthis.toolbox('.addthis_toolbox');
+
+    //reloads the fb like button on view change
+    try{
+        FB.XFBML.parse(); 
+    }catch(ex){}  
 
   }
 ]); //  HomeController
