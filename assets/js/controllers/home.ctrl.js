@@ -1,9 +1,6 @@
 tc.controller('HomeController', ['$scope', '$location', 'ImgurService', '$routeParams',
   function($scope, $location, ImgurService, $routeParams) {
 
-    addthis.init();
-    
-
     $scope.gallery = {
       images: []
     }
@@ -14,7 +11,8 @@ tc.controller('HomeController', ['$scope', '$location', 'ImgurService', '$routeP
       console.log($scope.gallery);
     })
 
-
+    // Once that's all done, call addthis.toolbox()
+    addthis.toolbox('.addthis_toolbox');
 
   }
 ]); //  HomeController
