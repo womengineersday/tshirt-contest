@@ -20,9 +20,11 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
       console.log($scope.image);
     })
 
+    //Reload all of the social media buttons on the page.
     try{
         FB.XFBML.parse(); 
         twttr.widgets.load();
+        gapi.plusone.go();
     }catch(ex){}    
 
 
