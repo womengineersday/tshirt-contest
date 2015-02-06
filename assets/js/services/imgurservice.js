@@ -22,7 +22,7 @@ tc.factory('ImgurService', ['$rootScope', '$location', '$http', '$q',
                 id: entry.id,
                 thumbnailSource: entry.link,
                 fullSource: entry.link,
-                datePosted: entry.datetime,
+                datePosted: new Date(entry.datetime*1000).toString("M/d/yy"),
                 description: entry.description,
                 title: entry.title
               };
@@ -51,7 +51,7 @@ tc.factory('ImgurService', ['$rootScope', '$location', '$http', '$q',
               id: getResult.id,
               thumbnailSource: getResult.link,
               fullSource: getResult.link,
-              datePosted: getResult.datetime,
+              datePosted: new Date(getResult.datetime*1000).toString("M/d/yy"),
               description: getResult.description,
               title: getResult.title
             };
@@ -68,7 +68,7 @@ tc.factory('ImgurService', ['$rootScope', '$location', '$http', '$q',
           id : result.id,
           thumbnailSource: result.link,
           fullSource: result.link,
-          datePosted: result.datetime,
+          datePosted: new Date(result.datetime*1000).toString("M/d/yy"),
           title: result.title,
           description: result.description
         }

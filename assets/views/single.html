@@ -1,20 +1,39 @@
 <div class="row">
 	<div class="col-md-7 single-image-big">
-		<img class="img-responsive" ng-src="{{single.image.fullSource}}.png" alt="">
+		<img class="img-responsive img-full" ng-src="{{single.image.fullSource}}.png" alt="">
 	</div>
 	<div class="col-md-5 single-image-details">
-		<h3>Submission #: {{single.image.id}}</h3>
-		<h3>Submitted: {{single.image.datePosted}}</h3>
-
-		<p><strong>Share and Tweet below to vote for this submission!</strong></p>
-
-		<div class="well well-lg">
-			<span class='st_twitter_large' displayText='Tweet'></span>
+		
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		  		<h3 class="panel-title">
+		  			Share and Tweet below to vote for this submission!
+		  		</h3>
+		  	</div>
+		  <div class="panel-body">
+		    <span class='st_twitter_large' displayText='Tweet'></span>
 			<span class='st_googleplus_large' displayText='Google +'></span>
 			<span class='st_facebook_large' displayText='Facebook'></span>
 			<span class='st_fblike_large' displayText='Facebook Like'></span>
-
+		  </div>
 		</div>
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					Submission Details
+				</h3>
+			</div>
+			<div class="panel-body">
+				<p>Submitted: {{single.image.datePosted}}</p>
+				<p>{{single.image.description}}</p>
+			</div>
+		</div>
+
+
+
+		<h5><a href="#/">&lArr; Return to all submissions</a></h5>
 
 	</div>
 
