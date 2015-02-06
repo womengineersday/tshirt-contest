@@ -2,7 +2,7 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
   function($scope, $location, ImgurService, $routeParams) {
 
     //re-initialize sharethis buttons
-    stButtons.makeButtons();
+    addthis.init();
 
     $scope.single = {
       id: $routeParams.id,
