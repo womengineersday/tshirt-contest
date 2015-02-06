@@ -1,3 +1,421 @@
+/*!
+ * Start Bootstrap - Scrolling Nav HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+/*** NAVIGATION ***/
+
+/* Make Bootstrap navbar collapse to mobile at 1000px instead of 768 */
+
+@media (max-width: 1000px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+}
+
+/* Main navbar atop the page */
+.navbar {
+    background-color: #F77F00;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    min-height: 60px;
+}
+/* Brand/title on navbar */
+.navbar .navbar-brand {
+    color: #FFF;
+    font-weight: bold;
+}
+
+@media(min-width:1000px) {
+    .navbar .navbar-brand {
+        font-size: x-large;
+    }
+}
+/* Small tagline below the navbar brand */
+.navbar-brand small {
+    display:block;
+    font-size:12px;
+}
+/* All links in navbar */
+.navbar a, .navbar a:visited, .navbar a:active, .navbar a:hover {
+    color: #FFF !important;
+}
+/* Container that holds links on mobile */
+.navbar .navbar-collapse, .navbar .navbar-form {
+    border: none;   //keeps white border from appearing above top link in menu on mobile
+}
+/* Added padding to increase navbar height on standard screen */
+@media(min-width:1000px) {
+    .navbar li a {
+        padding: 20px 10px 20px 10px;  //maintains space around links to allow for the tagline below the navbar brand
+    }
+}
+/* Currently selected/active navbar link */
+.navbar-default li.active a {
+    background-color: #006C93 !important;
+}
+
+@media(min-width:1000px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+/*** SECTIONS ***/
+
+/** Intro section and intro content **/
+
+.intro-section {
+    background-image: URL("../images/intro_bg.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-color: #F0EDE4;
+    height: 550px;
+    padding-top: 100px;
+    text-align: center;
+}
+
+#logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0px auto 20px auto;
+}
+/* Logo should be slightly less wide on standard */
+@media(min-width:1000px) {
+    #logo {
+        max-width: 80%;
+    }
+}
+
+.intro-section .feature-content {
+    background-color: #F0EDE4;
+    background:rgba(255,255,255,0.8);
+    margin: 0px auto 20px auto;
+    padding: 10px 20px 10px 20px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid #FFF;
+}
+
+.intro-section .feature-content h3 {
+    display: block;
+    font-size: medium;
+    text-shadow: 2px 2px #FFF;
+}
+
+@media(min-width:1000px) {
+    .intro-section .feature-content {
+      display: inline-block;
+    }
+
+   .intro-section .feature-content h3 {
+        display: inline-block;
+        font-size: large;
+        font-size: 1.5vw;
+        letter-spacing: -1px;
+    }
+}
+
+.intro-section .btn-register {
+    background-color: #D97002;
+    color: #FFFFFF;
+    border: 1px solid #BA6000;
+    font-size: large;
+    font-weight: bold;
+    display: block;
+    margin: 10px auto 0px auto;
+    box-shadow: 0px 2px 2px #999;
+    text-shadow: 1px 1px #333;
+}
+
+@media(min-width:1000px) {
+    .intro-section .btn-register {
+        margin-top: -5px;
+        font-size: x-large;
+        display: inline-block;
+    }
+}
+
+.intro-section .social-media-icons {
+  display: block;
+  margin: 10px;
+}
+.intro-section .mailchimp-subscribe-form {
+  margin: 0px;
+  display: block;
+}
+
+@media(min-width:1000px) {
+  .intro-section .social-media-icons {
+    display: inline;
+  }
+  .intro-section .mailchimp-subscribe-form {
+    margin: 0px;
+    display: inline;
+  }
+}
+
+/** Generic section style **/
+
+.section-limestone {
+    background-color: #F0EDE4;
+}
+
+.section-summitt {
+    background-color: #B9E1E2;
+}
+
+.content-section {
+    min-height: 100%;
+    padding: 50px 5px 50px 5px;
+    text-align: left;
+    color: #006C93;
+}
+
+@media(min-width:1000px) {
+    /* Make content section containers narrower than the nav on standard screens */
+    .content-section .container {
+        max-width: 65%;
+    }
+}
+
+.content-section p {
+  line-height: 1.5;
+}
+
+.content-section a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+#why-attend p {
+  font-size: large;
+}
+
+#schedule .pre-schedule .large-number {
+  font-size: 3.5em;
+  font-weight: bold;
+  display: none;
+}
+
+#schedule .pre-schedule p {
+  text-align: center;
+}
+
+#schedule .pre-schedule .topic-preview {
+
+}
+
+
+#schedule-table .row div{
+  padding: 3px;
+  text-align: center;
+}
+
+@media(min-width:1000px) {
+  #schedule-table .row div{
+    padding: 5px;
+    text-align: left;
+  }
+}
+
+#schedule-table .time {
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  border-top:  1px dashed #006C93;
+  border-bottom: 1px dashed #006C93;
+  padding: 5px 0px 5px 0px;
+}
+
+#schedule-table .title {
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+}
+
+#schedule-table .subtitle {
+  font-style: italic;
+  font-weight: bold;
+  display: block;
+}
+
+@media(min-width:1000px) {
+  #schedule-table .time {
+    text-align: right;
+    padding: 0px;
+    border: none;
+  }
+  #schedule-table .title {
+    text-align: left;
+  }
+}
+
+#speakers {
+  text-align: center;
+}
+
+/* Images of speakers for the speakers section */
+#speakers img {
+    width:90%;
+    height: auto;
+    border: 3px solid #4C4D4F;
+    border-radius: 3px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media(min-width:1000px) {
+    #speakers img {
+      margin-top: 25px;
+    }
+}
+
+#speakers .speaker-bio {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #006C93;
+}
 
 
 
+/* Center the register section*/
+#register {
+  text-align: center;
+}
+
+#register .btn-register {
+  background-color: #D97002;
+    color: #FFFFFF;
+    border: 1px solid #BA6000;
+    font-size: large;
+    font-weight: bold;
+    margin: 10px auto 0px auto;
+    box-shadow: 0px 2px 2px #999;
+    text-shadow: 1px 1px #333;
+  text-decoration: none;
+  display: block;
+}
+
+@media(min-width:1000px) {
+    #register .btn-register {
+    width: 230px;      
+    display: inline-block;
+    }
+}
+
+/** Footer section and content **/
+
+.footer-section {
+    color: #FFF;
+    background-color: #4C4D4F;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.footer-section a, .footer-section a:active, .footer-section a:visited, .footer-section a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+/*** GENERAL CONTENT ***/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+    line-height: 1.5;
+}
+
+p.border-emphasis {
+  text-align:center;
+  font-weight:bold;
+  line-height:1.8;
+  padding: 10px 0 10px 0;
+  border-top:1px solid #006C93;
+  border-bottom:1px solid #006C93;
+  margin: 10px;
+}
+
+ul li {
+  list-style-type: square;
+}
+
+.mailchimp-subscribe-form {
+  margin: 20px;
+}
+
+.social-media-icons {
+  display: block;
+}
+
+.social-media-icons a {
+  text-decoration: none;
+}
+
+.social-media-icons img {
+  margin-right: 5px;
+  border-radius: 2px;
+}
+
+/* Center the AddThis FB and Twitter Icons*/
+div.addthis_horizontal_follow_toolbox {
+    display: inline-block;
+    margin: 0 auto;
+}
