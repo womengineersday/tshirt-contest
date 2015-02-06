@@ -10,7 +10,7 @@ var appControllers = angular.module('appControllers', []);
 
 tc.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-  when('/home', {
+  when('/', {
     templateUrl: 'assets/views/home.html',
     controller: 'HomeController'
   }).
@@ -23,6 +23,6 @@ tc.config(['$routeProvider', function($routeProvider) {
     controller: 'StaticPageController'
   }).
   otherwise({
-    redirectTo: '/home'
+    redirectTo: '/'
   });
 }]);
