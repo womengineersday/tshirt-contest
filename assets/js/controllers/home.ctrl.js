@@ -4,7 +4,10 @@ tc.controller('HomeController', ['$scope', '$location', '$document', 'ImgurServi
     $scope.baseURL = "http://womengineersday.com/tshirts";
 
     $scope.gallery = {
-      images: []
+      images: [],
+      getId : function(index) {
+        return $scope.gallery.images[index].id;
+      }
     }
 
     ImgurService.getImages().then(function(result) {

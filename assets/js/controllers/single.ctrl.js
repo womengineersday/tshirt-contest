@@ -3,24 +3,24 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
 
     $scope.baseURL = "http://womengineersday.com/tshirts";
 
+    $scope.getURL = function() {
+      console.log("getURL called");
+      return $scope.baseURL + "/#/s/" + $scope.single.id;
+    }
+
     $scope.single = {
       id: $routeParams.id,
-      image: {},
-      meta: {
-        votes: 100,
-        ranking: 20,
-        total: 50
-      }
+      image: {}
     }
 
     ImgurService.getImage($routeParams.id).then(function(result) {
       $scope.single.image = result;
       console.log("Single controller");
       console.log($scope.image);
+      $scope.smbInit();
     });
 
     $scope.smbInit = function() {
-      //$scope.$apply();
       try{
         console.log("reloading FB buttons");
         FB.XFBML.parse();
@@ -35,6 +35,7 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
         console.log("reloading Google+ button");
         gapi.plusone.go();
       } catch(ex) { }
+
     };
 
   }
