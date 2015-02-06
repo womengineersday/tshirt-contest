@@ -33,7 +33,7 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
 
     $scope.smbInit = function() {
       try{
-        console.log("reloading FB buttons");
+      	console.log("reloading FB buttons");
         FB.XFBML.parse();
       }catch (ex) { }    
       try {
