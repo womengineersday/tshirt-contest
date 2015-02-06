@@ -8,5 +8,8 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
       $scope.image = result;
     });
 
+    $scope.socialURL = $location.absUrl();
+    $scope.testURL = "http://cnn.com";
+
   }
 ]); //  SingleController
