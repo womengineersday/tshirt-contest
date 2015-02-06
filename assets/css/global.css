@@ -34,3 +34,14 @@ h1, h2, h3, h4, h5, h6 {
 	border: 1px solid #4C4D4F;
     margin-bottom: 15px;
 }
+
+.social-media-button {
+    margin-right: 10px;
+}
+
+.smb-wrapper-tall {
+    display: inline-block;
+    float: left; 
+    height: 61px; 
+    margin: 5px;
+}

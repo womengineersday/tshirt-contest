@@ -18,15 +18,23 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
       $scope.single.image = result;
       console.log("Single controller");
       console.log($scope.image);
-    })
+    });
 
     //Reload all of the social media buttons on the page.
     try{
-        FB.XFBML.parse(); 
-        twttr.widgets.load();
-        gapi.plusone.go();
-    }catch(ex){}    
+        console.log("reloading FB buttons");
+        FB.XFBML.parse();
+    }catch (ex) { }    
 
+    try {
+      console.log("reloading Twitter button");
+      twttr.widgets.load();  
+    } catch(ex) { }
+
+    try {
+      console.loog("reloading Google+ button");
+      gapi.plusone.go();
+    } catch(ex) { }
 
 
   }

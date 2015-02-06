@@ -9,17 +9,27 @@ tc.controller('HomeController', ['$scope', '$location', 'ImgurService', '$routeP
       $scope.gallery.images = result;
       console.log("Home controller");
       console.log($scope.gallery);
-    })
 
-    // Once that's all done, call addthis.toolbox()
-    //addthis.toolbox('.addthis_toolbox');
+    });
 
     //Reload all of the social media buttons on the page.
     try{
-        FB.XFBML.parse(); 
-        twttr.widgets.load();
-        gapi.plusone.go();
-    }catch(ex){}    
+        console.log("reloading FB buttons");
+        FB.XFBML.parse();
+    }catch (ex) { }    
+
+    try {
+      console.log("reloading Twitter button");
+      twttr.widgets.load();  
+    } catch(ex) { }
+
+    try {
+      console.loog("reloading Google+ button");
+      gapi.plusone.go();
+    } catch(ex) { }
+
+
+
 
   }
 ]); //  HomeController
