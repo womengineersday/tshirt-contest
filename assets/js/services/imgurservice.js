@@ -1,4 +1,4 @@
-tc.factory('ImageService', ['$rootScope', '$location', '$http', '$q',
+tc.factory('ImgurService', ['$rootScope', '$location', '$http', '$q',
   function($rootScope, $location, $http, $q) {
 
     var imgurService = {

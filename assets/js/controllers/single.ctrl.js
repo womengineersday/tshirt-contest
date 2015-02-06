@@ -1,5 +1,5 @@
-tc.controller('SingleController', ['$scope', '$location', 'ImageService', '$routeParams',
-  function($scope, $location, ImageService, $routeParams) {
+tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$routeParams',
+  function($scope, $location, ImgurService, $routeParams) {
 
   	$scope.single = {
       id: $routeParams.id,
@@ -11,7 +11,7 @@ tc.controller('SingleController', ['$scope', '$location', 'ImageService', '$rout
       }
     }
 
-    ImageService.getImage($routeParams.id).then(function(result) {
+    ImgurService.getImage($routeParams.id).then(function(result) {
       $scope.single.image = result;
       console.log("Single controller");
       console.log($scope.image);

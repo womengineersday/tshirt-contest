@@ -1,21 +1,19 @@
-<div class="row" style="max-width: 950px; margin-left: auto; margin-right: auto;">
-	<div class="col-md-8 single-image-big">
+<div class="row">
+	<div class="col-md-7 single-image-big">
 		<img class="img-responsive" ng-src="{{single.image.fullSource}}.png" alt="">
 	</div>
-	<div class="col-md-4 single-image-details">
-		<p>{{single.image.id}}</p>
+	<div class="col-md-5 single-image-details">
+		<h3>Submission #: {{single.image.id}}</h3>
 		<h3>Submitted: {{single.image.datePosted}}</h3>
-		<h3>Votes: {{single.meta.votes}}</h3>
-		<h3>Current Ranking: {{single.meta.ranking}}/{{single.meta.total}}</h3>
 
-		<div class="a2a_kit a2a_kit_size_32 a2a_default_style"
-	    data-a2a-url="http://womengineersday.com/tshirt-contest/#/single/{{single.image.id}}" data-a2a-title="Example Page">
-	    <a class="a2a_button_facebook a2a_counter"></a>
-	    <a class="a2a_button_twitter a2a_counter"></a>
-    	<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-    
-</div>
+		<p><strong>Share and Tweet below to vote for this submission!</strong></p>
 
+		<!--AddToAny Buttons-->
+		<div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="http://womengineersday.com/tshirt-contest/#/single/{{single.image.id}}" data-a2a-title="T-Shirt Contest Submission | WomEngineers Day 2015">
+            <a class="a2a_button_facebook a2a_counter"></a>
+            <a class="a2a_button_twitter a2a_counter"></a>
+        </div>    
+		
 	</div>
 
 </div>
