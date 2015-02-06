@@ -1,6 +1,11 @@
 tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$routeParams',
   function($scope, $location, ImgurService, $routeParams) {
 
+    $scope.current_title = 'Test';
+    $scope.current_description = 'Test description';
+	$scope.socialURL = $location.absUrl();
+    $scope.testURL = $location.absUrl();
+    
     $scope.image = {};
 
     ImgurService.getImage($routeParams.id).then(function(result) {
@@ -8,8 +13,9 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
       $scope.image = result;
     });
 
-    $scope.socialURL = $location.absUrl();
-    $scope.testURL = "http://cnn.com";
+    
+
+
 
   }
 ]); //  SingleController

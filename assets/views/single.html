@@ -1,56 +1,62 @@
-<head>
-	<!-- Facebook metadata -->
+<!-- <head>
 	<meta property="og:url" content="PAGE_URL" /> 
 	<meta property="og:title" content="Photo ID?" />
 	<meta property="og:description" content="This pie is delicious!" /> 
 	<meta property="og:image" content="OUR IMAGE SOURCE" />
 </head>
+ -->
 
-<div class="page-header">
-    <h2>WomEngineers Day 2015 T-Shirt Contest</h2>
-</div>
-
-<div class="row">
-	<div class="col-md-7 single-image-big">
-		<img class="img-responsive img-full" ng-src="{{image.fullSource}}" ng-init="smbInit()" alt="">
-	</div>
-	<div class="col-md-5 single-image-details">
-		
-		<div class="panel panel-default">
-		  <div class="panel-heading">
-		  		<h5 class="panel-title">
-		  			Like, Share, and Tweet to vote!
-		  		</h5>
-		  	</div>
-		  <div class="panel-body">
-		  	{{socialURL}}
-		  	{{testURL}}
-		  	<ul ng-social-buttons
-		  		 data-title="'test'"
-	             data-description="'test2'"
-	             data-image="'http://s3.mistinfo.com/32/d8/32d8eab76f4c242f665bda66b5edc6c5.jpg'">
-	            <li class="ng-social-facebook">Facebook</li>
-	            <li class="ng-social-twitter">Twitter</li>
-	            <li class="ng-social-google-plus">Google+</li>
-	        </ul>
-		  </div>
-		</div>
-
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">
-					Submission Details
-				</h3>
-			</div>
-			<div class="panel-body">
-				<p>Submitted: {{image.datePosted}}</p>
-				<p>{{image.description}}</p>
-			</div>
-		</div>
-
-		<h5><a href="#/s/{{image.prevId}}">&lArr; View Previous</a> | <a href="#/">View All</a> | <a href="#/s/{{image.nextId}}"> View Next &rArr; </a></h5>
-
-
+<section ng-controller="SingleController">
+	<div class="page-header">
+	    <h2>WomEngineers Day 2015 T-Shirt Contest</h2>
 	</div>
 
-</div>
+	<div class="row">
+		<div class="col-md-7 single-image-big">
+			<img class="img-responsive img-full" ng-src="{{image.fullSource}}" ng-init="smbInit()" alt="">
+		</div>
+		<div class="col-md-5 single-image-details">
+			
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			  		<h5 class="panel-title">
+			  			Like, Share, and Tweet to vote!
+			  		</h5>
+			  	</div>
+			  <div class="panel-body">
+			  	{{socialURL}}
+			  	{{testURL}}
+			  	{{current_title}}
+			  	{{current_description}}
+			  	 <ul ng-social-buttons
+			         data-url="testURL"
+			         data-title="current_title"
+			         data-description="current_description"
+			         data-image="'https://www.google.com.ua/images/srpr/logo4w.png'"
+			         showcounts="true">
+		            <li class="ng-social-facebook">Facebook</li>
+		            <li class="ng-social-twitter">Twitter</li>
+		            <li class="ng-social-google-plus">Google+</li>
+		        </ul>
+			  </div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Submission Details
+					</h3>
+				</div>
+				<div class="panel-body">
+					<p>Submitted: {{image.datePosted}}</p>
+					<p>{{image.description}}</p>
+				</div>
+			</div>
+
+			<h5><a href="#/s/{{image.prevId}}">&lArr; View Previous</a> | <a href="#/">View All</a> | <a href="#/s/{{image.nextId}}"> View Next &rArr; </a></h5>
+
+
+		</div>
+
+	</div>
+</section>
