@@ -1,13 +1,16 @@
 tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$routeParams',
   function($scope, $location, ImgurService, $routeParams) {
 
-  	$scope.single = {
+    //re-initialize sharethis buttons
+    stButtons.makeButtons();
+
+    $scope.single = {
       id: $routeParams.id,
-      image : {},
-      meta : {
-      	votes: 100,
-		ranking: 20,
-		total: 50
+      image: {},
+      meta: {
+        votes: 100,
+        ranking: 20,
+        total: 50
       }
     }
 
@@ -17,6 +20,6 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
       console.log($scope.image);
     })
 
-   
+
   }
 ]); //  SingleController
