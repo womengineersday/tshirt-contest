@@ -4,7 +4,7 @@
 
 <div class="row">
 	<div class="col-md-7 single-image-big">
-		<img class="img-responsive img-full" ng-src="{{image.fullSource}}" ng-init="smbInit()" alt="">
+		<img class="img-responsive img-full" ng-src="{{image.fullSource}}" alt="">
 	</div>
 	<div class="col-md-5 single-image-details">
 		
@@ -16,15 +16,17 @@
 		  	</div>
 		  <div class="panel-body">
 
-		  <div class="smb-wrapper-tall">
-		  		<div class="fb-like" data-href="{{image.fullSource}}" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
-		  	</div>
+
 		  	<div class="smb-wrapper-tall">
-		  		<a class="twitter-share-button" data-text="Check out this submission for the WomEngineers Day T-Shirt Contest! Go vote now!" data-hashtags="WomEngineersDay" data-count="vertical">Tweet</a>
-		  	</div>
-		  	<div class="smb-wrapper-tall">
-		  		<div class="g-plusone" data-size="tall"></div>
-		  	</div>
+                <div fb-like="myModel.FbLikeUrl"></div>
+            </div>
+            <div class="smb-wrapper-tall">
+                <div tweet="myModel.Name"></div>
+            </div>
+            <div class="smb-wrapper-tall">
+                <div google-plus></div>
+            </div>
+
 		  	
 	        
 		</div>

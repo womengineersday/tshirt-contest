@@ -44,7 +44,7 @@
                               });
                               return;
                           } else {
-                              element.html('<div class="fb-like"' + (!!scope.fbLike ? ' data-href="' + scope.fbLike + '"' : '') + ' data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>');
+                              element.html('<div class="fb-like"' + (!!scope.fbLike ? ' data-href="' + scope.fbLike + '"' : '') + ' data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>');
                               $window.FB.XFBML.parse(element.parent()[0]);
                           }
                       }
@@ -68,7 +68,7 @@
                       }
 
                       function renderPlusButton() {
-                          element.html('<div class="g-plusone" data-size="medium"></div>');
+                          element.html('<div class="g-plusone" data-size="tall"></div>');
                           $window.gapi.plusone.go(element.parent()[0]);
                       }
                   }
@@ -108,7 +108,7 @@
                               });
                               return;
                           } else {
-                              element.html('<a href="https://twitter.com/share" class="twitter-share-button" data-text="' + scope.tweet + '">Tweet</a>');
+                              element.html('<a href="https://twitter.com/share" data-count="vertical" class="twitter-share-button" data-text="' + scope.tweet + '">Tweet</a>');
                               $window.twttr.widgets.load(element.parent()[0]);
                           }
                       }
