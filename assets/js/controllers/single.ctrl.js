@@ -10,12 +10,28 @@ tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$rout
 			console.log("SingleController: image object loaded with URL: " + $scope.image.fullSource);
 		});
 
+		$scope.social = {
+			fbURL : '',
+			twURL : 'http://womengineersday.com/tshirts/#/s/' + $routeParams.id,
+			gpURL : ''
+		}
+
 		/*
 			re-initialize the social media buttons once the image and
 			it's URL have been retrieved
 		*/
 		$scope.$watch('image', function(newVal, oldVal) {
-			console.log('SingleController: image object changed: ', $scope.image);
+			console.log('SingleController: image object changed: ', newVal, oldVal);
+
+			$scope.social.fbURL = newVal.fullSource;
+			//$scope.social.twURL = $location.absUrl();
+			//$scope.social.twURL = 'http://womengineersday.com/tshirts/#/s/' + $routeParams.id;
+			$scope.social.gpURL = 'http://womengineersday.com/tshirts/#/s/' + $routeParams.id;
+
+			console.log($scope.social.fbURL);
+			console.log($scope.social.twURL);
+			console.log($scope.social.gpURL);
+
 			try {
 				console.log("reloading FB buttons");
 				FB.XFBML.parse();
