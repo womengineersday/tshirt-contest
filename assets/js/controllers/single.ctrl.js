@@ -1,34 +1,23 @@
 tc.controller('SingleController', ['$scope', '$location', 'ImgurService', '$routeParams',
-  function($scope, $location, ImgurService, $routeParams) {
- 
-    $scope.image = {};
+	function($scope, $location, ImgurService, $routeParams) {
 
-    ImgurService.getImage($routeParams.id).then(function(result) {
-      console.log("SingleController: calling ImgurService service to get image with ID: " + $routeParams.id);
-      $scope.image = result;
-      $scope.myModel.FbLikeUrl = result.fullSource;
-    });
+		$scope.image = {};
 
- //    $scope.social = {
- //    	url : 'http://imgur.com/' + $routeParams.id,
- //    	//url : $location.absUrl(),
- //    	//url2 : window.location.href,
- //    	fburl : encodeURIComponent(encodeURIComponent($location.absUrl())),
+		ImgurService.getImage($routeParams.id).then(function(result) {
+			console.log("SingleController: calling ImgurService service to get image with ID: " + $routeParams.id);
+			$scope.image = result;
+			console.log("SingleController: image object loaded with URL: " + $scope.image.fullSource);
+		});
 
- //    	title : 'Check out this submission for the #WomEngineersDay T-Shirt Contest',
- //    	description : 'Check out this submission for the #WomEngineersDay T-Shirt Contest'
- //    }
-
-    $scope.myModel = {
-	  Name: "Check out this submission for the #WomEngineersDay T-Shirt Contest!",
-	  ImageUrl: 'http://www.jasonwatmore.com/pics/jason-watmore.jpg',
-	  //FbLikeUrl: 'http://jasonwatmore.com/post/2014/08/01/AngularJS-directives-for-social-sharing-buttons-Facebook-Like-GooglePlus-Twitter-and-Pinterest.aspx'
-	};
+		$scope.$watch('image', function(newVal, oldVal) {
+			console.log('SingleController: image object changed: ', $scope.image);
+			try {
+				console.log("reloading FB buttons");
+				FB.XFBML.parse();
+			} catch (ex) {}
+		})
 
 
- 	$scope.social = {
- 		fbURL : 'http://imgur.com/' + $routeParams.id
- 	}
 
-  }
+	}
 ]); //  SingleController
